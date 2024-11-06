@@ -11,3 +11,5 @@ $user = Auth::user();
 $lastUpdate = Carbon::parse($user->last_update);
 print($lastUpdate);
 @endphp
+
+Hello World
