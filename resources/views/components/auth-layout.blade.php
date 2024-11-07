@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!--favicon-->
-    <link rel="icon" href="{{ asset('admin/') }}" type="image/png">
+    <link rel="icon" href="{{ asset('helper/img/favicon-w.svg') }}" type="image/png">
     <!-- loader-->
     <link href="{{ asset('admin/assets/css/pace.min.css') }}" rel="stylesheet">
     <script src="{{ asset('admin/assets/js/pace.min.js') }}"></script>
@@ -46,7 +46,6 @@
 
     <!--plugins-->
     <script src="{{ asset('admin/assets/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('helper/js/custome_js.js') }}"></script>
     <script src="{{ asset('admin/assets/plugins/notifications/js/lobibox.min.js') }}"></script>
     <script src="{{ asset('helper/js/auth.js') }}"></script>
 
@@ -55,6 +54,10 @@
             // Tampilkan pesan error dari sesi jika ada
             @if(session('error'))
                 showNotification('error', '{{ session('error') }}');
+            @endif
+
+            @if(session('message'))
+                showNotification('success', '{{ session('message') }}');
             @endif
 
             $("#show_hide_password a").on('click', function (event) {

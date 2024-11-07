@@ -37,7 +37,7 @@ class AuthController extends Controller
                 }
                 return response()->json([
                     'alert' => 'error',
-                    'message' => 'Masukkan Password Anda',
+                    'message' => 'Masukkan Password Anda Yang Benar',
                 ]);
             } else {
                 return response()->json([

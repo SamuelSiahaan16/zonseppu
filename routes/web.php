@@ -24,7 +24,7 @@ Route::middleware('guest')->group(function () {
     Route::get('/auth/login', [AuthController::class, 'index'])->name('login');
     Route::post('/auth/login', [AuthController::class, 'do_login'])->name('auth.login'); 
 });
-Route::post('/auth/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/auth/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 Route::prefix('admin')->middleware('admin')->group(function () {
